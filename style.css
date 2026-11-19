@@ -1,0 +1,133 @@
+        body {
+            margin: 0;
+            background: #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: white;
+            font-family: sans-serif;
+            touch-action: manipulation;
+        }
+        #setup-menu {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #555;
+            text-align: center;
+            margin-bottom: 10px;
+            max-width: 380px;
+            max-height: 96vh;
+            overflow-y: auto;
+            z-index: 10;
+        }
+        .fighter-group { margin: 8px 0; }
+        .fighter-group[ data-slot="4" ] { display: none; }
+        .mode-switch {
+            position: fixed; top: 10px; z-index: 30; opacity: 1;
+            padding: 9px 13px; font-size: 13px; border: 1px solid #aaa;
+            background: #333; box-shadow: 0 2px 10px #0008;
+        }
+        #mode-2v2 { right: 10px; }
+        #mode-race { top: 52px; left: 10px; }
+        /* Управление игроком: отдельный верхний слой поверх арены на телефонах */
+        #player-controls { display:none; position:fixed; inset:0; z-index:99999; pointer-events:none; }
+        #joystick-base { position:absolute; left:max(18px, env(safe-area-inset-left)); bottom:calc(22px + env(safe-area-inset-bottom)); width:116px; height:116px; border-radius:50%; background:rgba(255,255,255,.18); border:2px solid rgba(255,255,255,.85); box-shadow:0 0 14px #168cff88; pointer-events:auto; touch-action:none; }
+        #joystick-knob { position:absolute; left:36px; top:36px; width:44px; height:44px; border-radius:50%; background:#eaf6ff; border:2px solid #168cff; box-shadow:0 0 12px #168cff; pointer-events:none; }
+        #player-actions { position:absolute; right:max(12px, env(safe-area-inset-right)); bottom:calc(22px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; gap:9px; pointer-events:auto; }
+        #player-actions button { width:min(150px, 38vw); min-height:48px; border-radius:12px; opacity:1; font-size:11px; font-weight:800; border:2px solid #fff; background:#0755a8; color:#fff; touch-action:manipulation; pointer-events:auto; box-shadow:0 2px 10px #000a; }
+        #player-actions button:nth-child(2) { background:#078dc9ef; }
+        #player-actions button:nth-child(3) { background:#b00020ef; }
+        #mode-1v1v1 { left: 10px; }
+        #mode-2v1 { left: 50%; transform: translateX(-50%); }
+        .btn-robot { background: linear-gradient(135deg, #37474f, #90a4ae 60%, #ff9800); border: 1px solid #cfd8dc; color: #fff; text-shadow: 0 0 4px #000; }
+        .mode-switch.active { background: #ff9800; color: #111; border-color: #fff; }
+        .team-heading { color: #ffcc80; font-weight: bold; margin-top: 8px; }
+        .chair-row { margin: 6px 0 2px; font-size: 12px; color: #b0bec5; display: none; }
+        .chair-row .chair-btn { padding: 4px 8px; margin: 2px; font-size: 11px; background: #37474f; color: #fff; border: 1px solid #78909c; border-radius: 6px; }
+        .chair-row .chair-btn.selected { background: #ff9800; color: #111; border-color: #fff; font-weight: bold; }
+        button {
+            padding: 6px 9px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            color: white;
+            margin: 2px;
+            opacity: 0.6;
+            font-size: 11px;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        button.selected { opacity: 1; border: 2px solid white; }
+        .btn-blue { background: #2196f3; }
+        .btn-red { background: #ff5252; }
+        .btn-green { background: #4caf50; }
+        .btn-anti { background: #9c27b0; }
+        .btn-oneshot { background: #151515; border: 1px solid #ff3333; }
+        .btn-scp { background: #78909c; }
+        .btn-author { background: #ffb300; color: #111; }
+        .btn-supauthor { background: linear-gradient(135deg, #000, #3e2f00 45%, #ffd54f); border: 1px solid #ffd54f; color: #fff; text-shadow: 0 0 4px #000; }
+        .btn-firstblue { background: linear-gradient(135deg,#063b91,#087ee8); border:1px solid #fff; color:#fff; }
+        .btn-prism { background: linear-gradient(135deg, #00f0ff, #00b8d4 55%, #7c4dff); border: 1px solid #b0bec5; color: #00222a; }
+        .btn-muha1 { background: linear-gradient(135deg, #33691e, #1b5e20 55%, #b2ff59); border: 1px solid #ccff90; }
+        .btn-muha2 { background: linear-gradient(135deg, #1b5e20, #004d40); border: 1px solid #69f0ae; }
+        .btn-gojo { background: linear-gradient(135deg, #e3f2fd, #90caf9); color: #0d47a1; border: 1px solid #42a5f5; }
+        .btn-sukuna { background: linear-gradient(135deg, #b71c1c, #4a148c); border: 1px solid #ff8a80; }
+        .btn-megumi { background: linear-gradient(135deg, #263238, #455a64); border: 1px solid #90a4ae; }
+        .btn-ryu { background: linear-gradient(135deg, #5d4037, #8d6e63); border: 1px solid #ffcc80; color: #fff; }
+        .btn-cosmic { background: linear-gradient(135deg, #12003a, #6a1b9a 55%, #26c6da); border: 1px solid #b388ff; color: #fff; text-shadow: 0 0 4px #7c4dff; }
+        .btn-cloner { background: linear-gradient(135deg, #00838f, #b2ebf2); border: 1px solid #e0f7fa; color: #002b30; text-shadow: 0 0 3px #e0f7fa; }
+        .btn-doubling { background: linear-gradient(135deg, #6a1b9a, #ffd54f); border: 1px solid #e1bee7; color: #fff; text-shadow: 0 0 4px #000; }
+        .btn-egor { background: linear-gradient(135deg, #212121, #76ff03); border: 1px solid #b2ff59; color: #fff; text-shadow: 0 0 4px #000; }
+        .btn-wally { background: linear-gradient(135deg, #0d47a1, #4fc3f7); border: 1px solid #b3e5fc; color: #fff; }
+        .btn-blackflash { background: linear-gradient(135deg, #050505, #3b0715); border: 1px solid #ff1744; color: #fff; text-shadow: 0 0 5px #ff1744; }
+        .btn-timegod { background: linear-gradient(135deg, #8d6e63, #3e2723); border: 1px solid #ffd54f; }
+        .btn-naoya { background: linear-gradient(135deg, #f9a825, #6d4c00); border: 1px solid #ffe082; color: #1b1200; }
+        .btn-todo { background: linear-gradient(135deg, #3e2723, #8d6e63); border: 1px solid #d7ccc8; color: #fff; }
+        .btn-gblack { background: linear-gradient(135deg, #212121, #ad1457); border: 1px solid #f48fb1; color: #fff; }
+        .btn-vegeta { background: linear-gradient(135deg, #1a237e, #6a1b9a); border: 1px solid #90caf9; color: #fff; }
+        .btn-goku { background: linear-gradient(135deg, #e65100, #1565c0); border: 1px solid #cfd8dc; color: #fff; }
+        .btn-yuji { background: linear-gradient(135deg, #263238, #b71c1c); border: 1px solid #f48fb1; color: #fff; }
+        .btn-yuta { background: linear-gradient(135deg, #1a237e, #3949ab); border: 1px solid #90caf9; color: #e3f2fd; }
+        .btn-none { background: #555; }
+        #start-btn {
+            background: #ff9800;
+            padding: 10px 24px;
+            font-size: 14px;
+            opacity: 1;
+            margin-top: 10px;
+        }
+        canvas {
+            background: #222;
+            border: 2px solid #555;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            display: none;
+            width: min(96vw, 80vh, 500px);
+            height: min(96vw, 80vh, 500px);
+        }
+        #result {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 20;
+        }
+        #result-text {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 14px;
+            text-align: center;
+            padding: 0 12px;
+        }
+        #result button {
+            opacity: 1;
+            font-size: 14px;
+            padding: 10px 18px;
+            background: #ff9800;
+        }

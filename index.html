@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ball Battle VS</title>
+    <meta name="description" content="Ball fighting arena: Goku, Vegeta, Goku Black, Yuji, Sukuna, Roblox Egor, One Shot and more.">
+    <meta name="theme-color" content="#111111">
+
+    <!-- Превью ссылки (WhatsApp, Telegram и т.д.).
+         ЗАМЕНИТЕ ТОЛЬКО ИМЯ: USERNAME на ваш логин GitHub (две строки ниже). -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ball Battle VS">
+    <meta property="og:description" content="Ball fighting arena: Goku (Ultra Instinct), Vegeta (Ultra Ego), Goku Black and more. Tap to play!">
+    <meta property="og:image" content="https://USERNAME.github.io/ball-battle/og-image.png">
+    <meta property="og:url" content="https://USERNAME.github.io/ball-battle/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Ball Battle">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="mode-1v1v1" class="mode-switch">1v1v1</button>
+<button id="mode-2v1" class="mode-switch">2 vs 1</button>
+<button id="mode-2v2" class="mode-switch">2v2</button>
+<button id="mode-race" class="mode-switch">Race</button>
+
+<div id="setup-menu">
+    <h3>Choose fighters</h3>
+
+    <div class="fighter-group" data-slot="1">
+        <div class="team-heading" id="team-heading-1">Team 1 — fighter 1</div> <br>
+        <button class="fighter-btn f1-btn btn-blue selected" data-fighter="1" data-type="blue" data-color="#2196f3" data-name="Blue Ball">Blue</button>
+        <button class="fighter-btn f1-btn btn-red" data-fighter="1" data-type="red" data-color="#ff5252" data-name="Red Ball">Red</button>
+        <button class="fighter-btn f1-btn btn-green" data-fighter="1" data-type="green" data-color="#4caf50" data-name="Green Ball">Green</button>
+        <button class="fighter-btn f1-btn btn-anti" data-fighter="1" data-type="antiball" data-color="#9c27b0" data-name="Anti Ball">Anti Ball</button>
+        <button class="fighter-btn f1-btn btn-oneshot" data-fighter="1" data-type="oneshot" data-color="#1a1a1a" data-name="One Shot Ball">One Shot</button>
+        <button class="fighter-btn f1-btn btn-scp" data-fighter="1" data-type="scp096" data-color="#b0bec5" data-name="SCP-096">SCP-096</button>
+        <button class="fighter-btn f1-btn btn-author" data-fighter="1" data-type="author" data-color="#ffb300" data-name="Author">Author</button>
+        <button class="fighter-btn f1-btn btn-supauthor" data-fighter="1" data-type="supauthor" data-color="#ffd54f" data-name="Supreme Author">Supreme Author</button>
+        <button class="fighter-btn f1-btn btn-prism" data-fighter="1" data-type="prism" data-color="#00f0ff" data-name="Prism Ball">Prism Ball</button>
+        <button class="fighter-btn f1-btn btn-muha1" data-fighter="1" data-type="muha1" data-color="#76b900" data-name="Fly 1">Fly 1</button>
+        <button class="fighter-btn f1-btn btn-muha2" data-fighter="1" data-type="muha2" data-color="#1b5e20" data-name="Fly 2">Fly 2</button>
+        <button class="fighter-btn f1-btn btn-gojo" data-fighter="1" data-type="gojo" data-color="#90caf9" data-name="Gojo">Gojo</button>
+        <button class="fighter-btn f1-btn btn-sukuna" data-fighter="1" data-type="sukuna" data-color="#c62828" data-name="Sukuna">Sukuna</button>
+        <button class="fighter-btn f1-btn btn-megumi" data-fighter="1" data-type="megumi" data-color="#455a64" data-name="Megumi">Megumi</button>
+        <button class="fighter-btn f1-btn btn-ryu" data-fighter="1" data-type="ryu" data-color="#8d6e63" data-name="Ryu">Ryu</button>
+        <button class="fighter-btn f1-btn btn-yuta" data-fighter="1" data-type="yuta" data-color="#3949ab" data-name="Yuta">Yuta</button>
+        <button class="fighter-btn f1-btn btn-yuji" data-fighter="1" data-type="yuji" data-color="#37474f" data-name="Yuji (Post-Shibuya)">Yuji (Post-Shibuya)</button>
+        <button class="fighter-btn f1-btn btn-todo" data-fighter="1" data-type="todo" data-color="#6d4c41" data-name="Aoi Todo">Todo</button>
+        <button class="fighter-btn f1-btn btn-goku" data-fighter="1" data-type="goku" data-color="#ef6c00" data-name="Goku (Ultra Instinct)">Goku (UI)</button>
+        <button class="fighter-btn f1-btn btn-vegeta" data-fighter="1" data-type="vegeta" data-color="#1a237e" data-name="Vegeta (Ultra Ego)">Vegeta (UE)</button>
+        <button class="fighter-btn f1-btn btn-gblack" data-fighter="1" data-type="gblack" data-color="#263238" data-name="Goku Black">Goku Black</button>
+        <button class="fighter-btn f1-btn btn-naoya" data-fighter="1" data-type="naoya" data-color="#f9a825" data-name="Naoya Zenin">Naoya</button>
+        <button class="fighter-btn f1-btn btn-timegod" data-fighter="1" data-type="timegod" data-color="#8d6e63" data-name="Time God">Time God</button>
+        <button class="fighter-btn f1-btn btn-wally" data-fighter="1" data-type="wally" data-color="#1e88e5" data-name="Wally West">Wally West</button>
+        <button class="fighter-btn f1-btn btn-egor" data-fighter="1" data-type="egor" data-color="#607d8b" data-name="Roblox Egor">Roblox Egor</button>
+        <button class="fighter-btn f1-btn btn-doubling" data-fighter="1" data-type="doubling" data-color="#ab47bc" data-name="Doubling">Doubling</button>
+        <button class="fighter-btn f1-btn btn-cloner" data-fighter="1" data-type="cloner" data-color="#00acc1" data-name="Cloner">Cloner</button>
+        <button class="fighter-btn f1-btn btn-cosmic" data-fighter="1" data-type="cosmic" data-color="#5e35b1" data-name="Cosmic Alien">Cosmic Alien</button>
+        <button class="fighter-btn f1-btn btn-robot" data-fighter="1" data-type="robot" data-color="#90a4ae" data-name="Robot Cyborg">Robot Cyborg</button>
+        <button class="fighter-btn f1-btn btn-blackflash" data-fighter="1" data-type="blackflash" data-color="#171017" data-name="Black Flash">Black Flash</button>
+        <button class="fighter-btn f1-btn btn-firstblue" data-fighter="1" data-type="thefirstblueguy" data-color="#0755b8" data-name="TheFirstBlueGuy">TheFirstBlueGuy</button>
+    </div>
+
+    <div class="fighter-group" data-slot="2">
+        <div class="team-heading" id="team-heading-2">Team 1 — fighter 2</div> <br>
+        <button class="fighter-btn f2-btn btn-blue" data-fighter="2" data-type="blue" data-color="#2196f3" data-name="Blue Ball">Blue</button>
+        <button class="fighter-btn f2-btn btn-red selected" data-fighter="2" data-type="red" data-color="#ff5252" data-name="Red Ball">Red</button>
+        <button class="fighter-btn f2-btn btn-green" data-fighter="2" data-type="green" data-color="#4caf50" data-name="Green Ball">Green</button>
+        <button class="fighter-btn f2-btn btn-anti" data-fighter="2" data-type="antiball" data-color="#9c27b0" data-name="Anti Ball">Anti Ball</button>
+        <button class="fighter-btn f2-btn btn-oneshot" data-fighter="2" data-type="oneshot" data-color="#1a1a1a" data-name="One Shot Ball">One Shot</button>
+        <button class="fighter-btn f2-btn btn-scp" data-fighter="2" data-type="scp096" data-color="#b0bec5" data-name="SCP-096">SCP-096</button>
+        <button class="fighter-btn f2-btn btn-author" data-fighter="2" data-type="author" data-color="#ffb300" data-name="Author">Author</button>
+        <button class="fighter-btn f2-btn btn-supauthor" data-fighter="2" data-type="supauthor" data-color="#ffd54f" data-name="Supreme Author">Supreme Author</button>
+        <button class="fighter-btn f2-btn btn-prism" data-fighter="2" data-type="prism" data-color="#00f0ff" data-name="Prism Ball">Prism Ball</button>
+        <button class="fighter-btn f2-btn btn-muha1" data-fighter="2" data-type="muha1" data-color="#76b900" data-name="Fly 1">Fly 1</button>
+        <button class="fighter-btn f2-btn btn-muha2" data-fighter="2" data-type="muha2" data-color="#1b5e20" data-name="Fly 2">Fly 2</button>
+        <button class="fighter-btn f2-btn btn-gojo" data-fighter="2" data-type="gojo" data-color="#90caf9" data-name="Gojo">Gojo</button>
+        <button class="fighter-btn f2-btn btn-sukuna" data-fighter="2" data-type="sukuna" data-color="#c62828" data-name="Sukuna">Sukuna</button>
+        <button class="fighter-btn f2-btn btn-megumi" data-fighter="2" data-type="megumi" data-color="#455a64" data-name="Megumi">Megumi</button>
+        <button class="fighter-btn f2-btn btn-ryu" data-fighter="2" data-type="ryu" data-color="#8d6e63" data-name="Ryu">Ryu</button>
+        <button class="fighter-btn f2-btn btn-yuta" data-fighter="2" data-type="yuta" data-color="#3949ab" data-name="Yuta">Yuta</button>
+        <button class="fighter-btn f2-btn btn-yuji" data-fighter="2" data-type="yuji" data-color="#37474f" data-name="Yuji (Post-Shibuya)">Yuji (Post-Shibuya)</button>
+        <button class="fighter-btn f2-btn btn-todo" data-fighter="2" data-type="todo" data-color="#6d4c41" data-name="Aoi Todo">Todo</button>
+        <button class="fighter-btn f2-btn btn-goku" data-fighter="2" data-type="goku" data-color="#ef6c00" data-name="Goku (Ultra Instinct)">Goku (UI)</button>
+        <button class="fighter-btn f2-btn btn-vegeta" data-fighter="2" data-type="vegeta" data-color="#1a237e" data-name="Vegeta (Ultra Ego)">Vegeta (UE)</button>
+        <button class="fighter-btn f2-btn btn-gblack" data-fighter="2" data-type="gblack" data-color="#263238" data-name="Goku Black">Goku Black</button>
+        <button class="fighter-btn f2-btn btn-naoya" data-fighter="2" data-type="naoya" data-color="#f9a825" data-name="Naoya Zenin">Naoya</button>
+        <button class="fighter-btn f2-btn btn-timegod" data-fighter="2" data-type="timegod" data-color="#8d6e63" data-name="Time God">Time God</button>
+        <button class="fighter-btn f2-btn btn-wally" data-fighter="2" data-type="wally" data-color="#1e88e5" data-name="Wally West">Wally West</button>
+        <button class="fighter-btn f2-btn btn-egor" data-fighter="2" data-type="egor" data-color="#607d8b" data-name="Roblox Egor">Roblox Egor</button>
+        <button class="fighter-btn f2-btn btn-doubling" data-fighter="2" data-type="doubling" data-color="#ab47bc" data-name="Doubling">Doubling</button>
+        <button class="fighter-btn f2-btn btn-cloner" data-fighter="2" data-type="cloner" data-color="#00acc1" data-name="Cloner">Cloner</button>
+        <button class="fighter-btn f2-btn btn-cosmic" data-fighter="2" data-type="cosmic" data-color="#5e35b1" data-name="Cosmic Alien">Cosmic Alien</button>
+        <button class="fighter-btn f2-btn btn-robot" data-fighter="2" data-type="robot" data-color="#90a4ae" data-name="Robot Cyborg">Robot Cyborg</button>
+        <button class="fighter-btn f2-btn btn-blackflash" data-fighter="2" data-type="blackflash" data-color="#171017" data-name="Black Flash">Black Flash</button>
+        <button class="fighter-btn f2-btn btn-firstblue" data-fighter="2" data-type="thefirstblueguy" data-color="#0755b8" data-name="TheFirstBlueGuy">TheFirstBlueGuy</button>
+    </div>
+
+    <div class="fighter-group" data-slot="3">
+        <div class="team-heading" id="team-heading-3">Fighter 3 (optional)</div> <br>
+        <button class="fighter-btn f3-btn btn-none selected" data-fighter="3" data-type="none" data-color="#555" data-name="None">None</button>
+        <button class="fighter-btn f3-btn btn-blue" data-fighter="3" data-type="blue" data-color="#2196f3" data-name="Blue Ball">Blue</button>
+        <button class="fighter-btn f3-btn btn-red" data-fighter="3" data-type="red" data-color="#ff5252" data-name="Red Ball">Red</button>
+        <button class="fighter-btn f3-btn btn-green" data-fighter="3" data-type="green" data-color="#4caf50" data-name="Green Ball">Green</button>
+        <button class="fighter-btn f3-btn btn-anti" data-fighter="3" data-type="antiball" data-color="#9c27b0" data-name="Anti Ball">Anti Ball</button>
+        <button class="fighter-btn f3-btn btn-oneshot" data-fighter="3" data-type="oneshot" data-color="#1a1a1a" data-name="One Shot Ball">One Shot</button>
+        <button class="fighter-btn f3-btn btn-scp" data-fighter="3" data-type="scp096" data-color="#b0bec5" data-name="SCP-096">SCP-096</button>
+        <button class="fighter-btn f3-btn btn-author" data-fighter="3" data-type="author" data-color="#ffb300" data-name="Author">Author</button>
+        <button class="fighter-btn f3-btn btn-supauthor" data-fighter="3" data-type="supauthor" data-color="#ffd54f" data-name="Supreme Author">Supreme Author</button>
+        <button class="fighter-btn f3-btn btn-prism" data-fighter="3" data-type="prism" data-color="#00f0ff" data-name="Prism Ball">Prism Ball</button>
+        <button class="fighter-btn f3-btn btn-muha1" data-fighter="3" data-type="muha1" data-color="#76b900" data-name="Fly 1">Fly 1</button>
+        <button class="fighter-btn f3-btn btn-muha2" data-fighter="3" data-type="muha2" data-color="#1b5e20" data-name="Fly 2">Fly 2</button>
+        <button class="fighter-btn f3-btn btn-gojo" data-fighter="3" data-type="gojo" data-color="#90caf9" data-name="Gojo">Gojo</button>
+        <button class="fighter-btn f3-btn btn-sukuna" data-fighter="3" data-type="sukuna" data-color="#c62828" data-name="Sukuna">Sukuna</button>
+        <button class="fighter-btn f3-btn btn-megumi" data-fighter="3" data-type="megumi" data-color="#455a64" data-name="Megumi">Megumi</button>
+        <button class="fighter-btn f3-btn btn-ryu" data-fighter="3" data-type="ryu" data-color="#8d6e63" data-name="Ryu">Ryu</button>
+        <button class="fighter-btn f3-btn btn-yuta" data-fighter="3" data-type="yuta" data-color="#3949ab" data-name="Yuta">Yuta</button>
+        <button class="fighter-btn f3-btn btn-yuji" data-fighter="3" data-type="yuji" data-color="#37474f" data-name="Yuji (Post-Shibuya)">Yuji (Post-Shibuya)</button>
+        <button class="fighter-btn f3-btn btn-todo" data-fighter="3" data-type="todo" data-color="#6d4c41" data-name="Aoi Todo">Todo</button>
+        <button class="fighter-btn f3-btn btn-goku" data-fighter="3" data-type="goku" data-color="#ef6c00" data-name="Goku (Ultra Instinct)">Goku (UI)</button>
+        <button class="fighter-btn f3-btn btn-vegeta" data-fighter="3" data-type="vegeta" data-color="#1a237e" data-name="Vegeta (Ultra Ego)">Vegeta (UE)</button>
+        <button class="fighter-btn f3-btn btn-gblack" data-fighter="3" data-type="gblack" data-color="#263238" data-name="Goku Black">Goku Black</button>
+        <button class="fighter-btn f3-btn btn-naoya" data-fighter="3" data-type="naoya" data-color="#f9a825" data-name="Naoya Zenin">Naoya</button>
+        <button class="fighter-btn f3-btn btn-timegod" data-fighter="3" data-type="timegod" data-color="#8d6e63" data-name="Time God">Time God</button>
+        <button class="fighter-btn f3-btn btn-wally" data-fighter="3" data-type="wally" data-color="#1e88e5" data-name="Wally West">Wally West</button>
+        <button class="fighter-btn f3-btn btn-egor" data-fighter="3" data-type="egor" data-color="#607d8b" data-name="Roblox Egor">Roblox Egor</button>
+        <button class="fighter-btn f3-btn btn-doubling" data-fighter="3" data-type="doubling" data-color="#ab47bc" data-name="Doubling">Doubling</button>
+        <button class="fighter-btn f3-btn btn-cloner" data-fighter="3" data-type="cloner" data-color="#00acc1" data-name="Cloner">Cloner</button>
+        <button class="fighter-btn f3-btn btn-cosmic" data-fighter="3" data-type="cosmic" data-color="#5e35b1" data-name="Cosmic Alien">Cosmic Alien</button>
+        <button class="fighter-btn f3-btn btn-robot" data-fighter="3" data-type="robot" data-color="#90a4ae" data-name="Robot Cyborg">Robot Cyborg</button>
+        <button class="fighter-btn f3-btn btn-blackflash" data-fighter="3" data-type="blackflash" data-color="#171017" data-name="Black Flash">Black Flash</button>
+        <button class="fighter-btn f3-btn btn-firstblue" data-fighter="3" data-type="thefirstblueguy" data-color="#0755b8" data-name="TheFirstBlueGuy">TheFirstBlueGuy</button>
+    </div>
+
+    <button id="start-btn">Start battle!</button>
+</div>
+
+<canvas id="canvas" width="500" height="500"></canvas>
+<div id="player-controls">
+  <div id="joystick-base" aria-label="Movement joystick"><div id="joystick-knob"></div></div>
+  <div id="player-actions">
+    <button id="player-hit">HIT · 50 HP</button>
+    <button id="player-laser">BLUE LASER</button>
+    <button id="player-kill">INSTANT KILL</button>
+  </div>
+</div>
+
+<div id="result">
+    <div id="result-text"></div>
+    <div>
+        <button id="rematch-btn">Rematch</button>
+        <button id="menu-btn">Menu</button>
+    </div>
+</div>
+<script src="game.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+}
+</script>
+</body>
+</html>
